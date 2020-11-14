@@ -10,7 +10,7 @@ by adding `enterprise_connector_elixir_sdk` to your list of dependencies in `mix
 ```elixir
 def deps do
   [
-    {:enterprise_connector_elixir_sdk, "~> 0.1.0"}
+    {:enterprise_connector, "~> 0.1.0"}
   ]
 end
 ```

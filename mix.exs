@@ -1,9 +1,9 @@
-defmodule EnterpriseConnectorElixirSdk.MixProject do
+defmodule EnterpriseConnector.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :enterprise_connector_elixir_sdk,
+      app: :enterprise_connector,
       version: "0.1.0",
       elixir: "~> 1.11",
       start_permanent: Mix.env() == :prod,
