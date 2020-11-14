@@ -27,3 +27,5 @@ enterprise_connector_elixir_sdk-*.tar
 /tmp
 
 .idea
+
+enterprise_connector_elixir_sdk.iml
