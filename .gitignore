@@ -25,3 +25,5 @@ enterprise_connector_elixir_sdk-*.tar
 
 # Temporary files for e.g. tests
 /tmp
+
+.idea
