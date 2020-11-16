@@ -26,7 +26,7 @@ defmodule Connector do
       :ok
 
   """
-  @spec get_all_sms(map) :: :ok | {:error, String.t()}
+  @spec get_all_sms(map) :: {:ok, {:ok, map}} | {:error, String.t()}
   def get_all_sms(options) do
     Connector.API.get_all_sms(options)
   end
