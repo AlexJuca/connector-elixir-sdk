@@ -1,3 +1,3 @@
 use Mix.Config
 
-import_config "#{Mix.env()}.exs"
+config :connector, Connector.API, api: Connector.API.Mock
