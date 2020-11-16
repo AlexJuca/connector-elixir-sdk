@@ -10,7 +10,20 @@ defmodule Connector.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       authors: ["Alexandre Juca <corextechnologies@gmail.com>"],
-      description: "Simple Elixir library for sending SMS's via Enterprise Connector"
+      description: description(),
+      package: package()
+    ]
+  end
+
+  def description do
+    "Simple Elixir library for sending SMS's via Enterprise Connector"
+  end
+
+  defp package() do
+    [
+      name: "connector",
+      links: %{"Github" => "https://github.com/AlexJuca/connector-elixir-sdk"},
+      licenses: ["Apache-2.0"]
     ]
   end
 
