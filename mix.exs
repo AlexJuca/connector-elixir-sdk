@@ -1,15 +1,17 @@
 defmodule Connector.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+
   def project do
     [
       app: :connector,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.11",
       elixir_rc_paths: elixir_rc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      authors: ["Alexandre Juca <corextechnologies@gmail.com>"],
+      mainteners: ["Alexandre Juca"],
       description: description(),
       package: package()
     ]
