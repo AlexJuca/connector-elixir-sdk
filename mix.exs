@@ -11,9 +11,18 @@ defmodule Connector.MixProject do
       elixir_rc_paths: elixir_rc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      mainteners: ["Alexandre Juca"],
+      docs: docs(),
       description: description(),
       package: package()
+    ]
+  end
+
+  defp docs do
+    [
+      extras: ["README.md"],
+      main: "readme",
+      source_ref: "v#{@version}",
+      source_url: "https://github.com/AlexJuca/connector-elixir-sdk"
     ]
   end
 
@@ -25,7 +34,8 @@ defmodule Connector.MixProject do
     [
       name: "connector",
       links: %{"Github" => "https://github.com/AlexJuca/connector-elixir-sdk"},
-      licenses: ["Apache-2.0"]
+      licenses: ["Apache-2.0"],
+      mainteners: ["Alexandre Juca"],
     ]
   end
 
