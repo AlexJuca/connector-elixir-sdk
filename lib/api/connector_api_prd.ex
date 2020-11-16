@@ -15,4 +15,13 @@ defmodule Connector.API.Production do
       {:ok, %HTTPoison.Response{status_code: 500}} -> {:error, :internal_server_error}
     end
   end
+
+  def get_all_sms(options) do
+    headers = ["Content-Type": "application/json", "X-API-Key": Map.get(options, :api_key)]
+
+    case HTTPoison.get(@base_uri, headers, []) do
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} -> {:ok, Poison.decode(body)}
+      {:ok, %HTTPoison.Response{status_code: 401}} -> {:error, :invalid_api_key}
+    end
+  end
 end
