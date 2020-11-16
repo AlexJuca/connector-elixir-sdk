@@ -25,6 +25,9 @@ def deps do
 end
 ```
 
+## Documentation
+Visit [hex.docs](https://hexdocs.pm/connector/0.1.0) to see documentation.
+
 ## License
 
 Copyright © 2020 Alexandre Juca <corextechnologies@gmail.com>
