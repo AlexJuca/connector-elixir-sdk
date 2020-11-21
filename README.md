@@ -34,7 +34,7 @@ Add `connector` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:connector, "~> 0.1.0"}
+    {:connector, "~> 0.1.1"}
   ]
 end
 ```
