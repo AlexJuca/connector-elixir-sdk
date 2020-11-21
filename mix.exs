@@ -35,7 +35,7 @@ defmodule Connector.MixProject do
       name: "connector",
       links: %{"Github" => "https://github.com/AlexJuca/connector-elixir-sdk"},
       licenses: ["Apache-2.0"],
-      mainteners: ["Alexandre Juca"],
+      mainteners: ["Alexandre Juca"]
     ]
   end
 
@@ -45,7 +45,8 @@ defmodule Connector.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger]
+      extra_applications: [:logger],
+      mod: {Connector.Application, []}
     ]
   end
 
