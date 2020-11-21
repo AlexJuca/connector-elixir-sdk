@@ -1,13 +1,13 @@
 # Connector
 
-**An Elixir library for sending SMS's via Enterprise Connector**
+**An Elixir library for sending SMS's concurrently via Enterprise Connector**
 
 ![Elixir CI](https://github.com/AlexJuca/connector-elixir-sdk/workflows/Elixir%20CI/badge.svg)
 
 This library allows you to use the power of elixir's processes and supervision trees 
 to send SMS's efficiently. 
 
-All message requests will be executed as an elixir task which is part of a dynamic supervision tree. 
+All message requests will be executed as an elixir Task which is part of a dynamic supervision tree. 
 Each message request is attached to its own process, meaning you can send 
 thousands of messages concurrently and efficiently.
 
