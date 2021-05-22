@@ -6,13 +6,16 @@ defmodule Connector.API.Production do
 
     body = Poison.encode!(content)
 
-    headers = ["Content-Type": "application/json", "X-API-Key": Map.get(options, :api_key)]
+    headers = [
+      "Content-Type": "application/json",
+      "X-API-Key": Map.get(options, :api_key)
+    ]
 
     send_sms(body, headers)
   end
 
   defp send_sms(body, headers) do
-    {:ok, pid} =
+    {:ok, _} =
       Task.Supervisor.start_child(
         Connector.TaskSupervisor,
         fn ->
@@ -34,19 +37,23 @@ defmodule Connector.API.Production do
   end
 
   def get_all_sms(options) do
-    headers = ["Content-Type": "application/json", "X-API-Key": Map.get(options, :api_key)]
+    headers = [
+      "Content-Type": "application/json",
+      "X-API-Key": Map.get(options, :api_key)
+    ]
+
     case HTTPoison.get(@base_uri, headers, []) do
       {:ok, %HTTPoison.Response{status_code: 200, body: body}} -> {:ok, Poison.decode(body)}
       {:ok, %HTTPoison.Response{status_code: 401}} -> {:error, :invalid_api_key}
     end
   end
 
-  defp get_all_sms(headers, opts) do
-    {:ok, pid} =
+  defp get_all_sms(headers, options) do
+    {:ok, _} =
       Task.Supervisor.start_child(
         Connector.TaskSupervisor,
         fn ->
-          case HTTPoison.get(@base_uri, headers, opts) do
+          case HTTPoison.get(@base_uri, headers, options) do
             {:ok, %HTTPoison.Response{status_code: 200, body: body}} -> {:ok, Poison.decode(body)}
             {:ok, %HTTPoison.Response{status_code: 401}} -> {:error, :invalid_api_key}
           end

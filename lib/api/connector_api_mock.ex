@@ -21,7 +21,7 @@ defmodule Connector.API.Mock do
 
   def get_all_sms(_options = %{:api_key => "invalid-api-key"}), do: {:error, :invalid_api_key}
 
-  def get_all_sms(options) do
+  def get_all_sms(_options) do
     {:ok,
      {:ok,
       %{
